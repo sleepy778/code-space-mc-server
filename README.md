@@ -1,33 +1,10 @@
 # Minecraft Server Setup Guide
 
-This guide explains how to set up a Minecraft server using the provided `setup.sh` script. It also includes instructions for configuring `ngrok` and `playit.gg` to expose your server to the internet.
-
----
-
-## Prerequisites
-
-Before starting, ensure you have the following installed on your system:
-1. **Bash Shell** (default on Linux and macOS, installable on Windows via WSL or Git Bash).
-2. **`curl`**: Used for downloading files.
-3. **`jq`**: A lightweight JSON processor.
-   - Install it using:
-     ```bash
-     sudo apt-get install jq -y  # For Debian/Ubuntu
-     ```
-4. **`ngrok`**: A tunneling service to expose your local server to the internet.
-   - Download it from [ngrok's website](https://ngrok.com/download).
-5. **`playit.gg`**: Another tunneling service for Minecraft servers.
-   - Download the `playit` binary from [playit.gg](https://playit.gg/download).
-
----
-
 ## Setup Instructions
 
 ### Step 1: Configure the `setup.sh` Script
-1. Open the `setup.sh` file in a text editor:
-   ```bash
-   nano setup.sh
-   ```
+1. Open the `setup.sh` file:
+
 2. Replace the placeholder `AUTHTOKEN` value with your actual `ngrok` authtoken:
    ```bash
    AUTHTOKEN="your-ngrok-authtoken"
@@ -55,40 +32,29 @@ Before starting, ensure you have the following installed on your system:
 
 ---
 
-### Step 3: Set Up `ngrok`
-1. If the script successfully configured `ngrok`, you’re ready to use it.
-2. To manually verify or reconfigure `ngrok`, run:
+### Step 3: Set Up ip stuff
+1. open a new terminal page
+2. If the script successfully configured `ngrok`, you’re ready to use it.
+3. To manually verify or reconfigure `ngrok`, run:
    ```bash
    ngrok config add-authtoken your-ngrok-authtoken
    ```
-3. Start a tunnel for your Minecraft server:
+4. Run the `ip.sh` script:
    ```bash
-   ngrok tcp 25565
+   ./ip.sh
    ```
-   - This will expose your Minecraft server on a public IP and port provided by `ngrok`.
 
----
-
-### Step 4: Set Up `playit.gg`
-1. Download the `playit` binary from [playit.gg](https://playit.gg/download).
-2. Make the binary executable:
-   ```bash
-   chmod +x playit
-   ```
-3. Run the `playit` binary:
-   ```bash
-   ./playit
-   ```
-4. Follow the on-screen instructions to link your `playit.gg` account and set up a tunnel for your Minecraft server.
+5. Follow the on-screen instructions to link your `playit.gg` account and set up a tunnel for your Minecraft server.
 
 ---
 
 ### Step 5: Start the Minecraft Server
-1. Run the `start.sh` script to start the Minecraft server:
+1. go back to the original terminal page
+2. Run the `start.sh` script to start the Minecraft server:
    ```bash
    ./start.sh
    ```
-2. Use the `ip.sh` script to retrieve the IP addresses for connecting to the server:
+3. Use the `ip.sh` script to retrieve the IP addresses for connecting to the server:
    ```bash
    ./ip.sh
    ```
@@ -105,22 +71,5 @@ Before starting, ensure you have the following installed on your system:
    ```
 
 ---
-
-## Troubleshooting
-
-- **`ngrok` or `playit` not working?**
-  - Ensure the binaries are executable (`chmod +x`).
-  - Verify your internet connection.
-  - Check the logs for errors.
-- **Server not starting?**
-  - Ensure `paper.jar` was downloaded correctly.
-  - Check the `start.sh` script for errors.
-
----
-
-## Additional Notes
-
-- The `setup.sh` script automates most of the setup process, but you can manually configure `ngrok` and `playit.gg` if needed.
-- Share the public IP and port (from `ngrok` or `playit.gg`) with your friends to allow them to connect to your server.
 
 Enjoy your Minecraft server!
