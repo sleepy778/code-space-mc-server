@@ -24,6 +24,9 @@ curl -L -o paper.jar "https://api.papermc.io/v2/projects/paper/versions/$PAPER_V
 
 echo "Downloaded paper.jar"
 
+sudo apt install tmux
+sudo apt install default-jdk
+
 chmod +x playit
 chmod +x ngrok.tgz
 chmod +x setup.sh
