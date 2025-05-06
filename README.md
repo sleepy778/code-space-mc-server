@@ -70,6 +70,16 @@
    ./save.sh
    ```
 
+
 ---
 
+
+
 Enjoy your Minecraft server!
+
+## things to consider
+1. there is a bandwidth limit because of github
+2. this codespace you run this in should be 4 cores
+3. the codespaces do not stay up 24/7 so..
+4. this is probaly not good for a commercial server/ any public server with many players and such
+5. what you do with this server what you break and all other resposibilites do not go to me so do not try to find me or my email and start angerly asking for a fix to a problem idk how to solve 
